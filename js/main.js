@@ -17,7 +17,8 @@ function disableDoors() {
     const doorElements = document.getElementById("grid-container").children;
 
     for (let i = 0; i < cDay; i++) {
-        doorElements.item(i).setAttribute("class", "door enabled");
+        doorElements.item(i).classList.add("enabled");
+        doorElements.item(i).classList.remove("disabled");
     }
 }
 

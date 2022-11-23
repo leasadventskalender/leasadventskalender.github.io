@@ -1,3 +1,15 @@
+html, body {
+    font-family: Montserrat, Roboto, Arial, sans-serif;
+    font-size: 15px;
+
+    background-color: #EDE2D1;
+    color: #141414;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
 button.primary {
     appearance: none;
     background-color: #000000;

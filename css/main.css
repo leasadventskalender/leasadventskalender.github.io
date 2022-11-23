@@ -1,6 +1,4 @@
 html, body {
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 15px;
     overflow-x: hidden;
 }
 
@@ -78,7 +76,7 @@ h1 {
 
     width: 112px;
     height: 150px;
-    border-radius: 10%;
+    border-radius: 15px;
     cursor: pointer;
 }
 
@@ -88,21 +86,28 @@ h1 {
 
     width: 100%;
     height: 100%;
-    outline: black 3px solid;
     border-radius: 15px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: white;
     transition-duration: .5s;
     transform-origin: left;
+}
+
+.door.red > .front {
+    background-color: #A83939;
+}
+
+.door.brown > .front {
+    background-color: #5B4633;
 }
 
 .front > span {
     font-size: 3em;
     font-weight: bold;
+    color: #EDE2D1;
 }
 
 .disabled {
@@ -110,7 +115,7 @@ h1 {
 }
 
 .enabled > div:first-child:hover {
-    transform: skew(0, 10deg);
+    transform: skew(0, 14deg);
 }
 
 .back {
@@ -119,8 +124,15 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    outline: 6px solid;
+    outline-offset: -6px;
+}
 
-    background-color: black;
+.red > .back {
+    outline-color: #A83939;
+}
+.brown > .back {
+    outline-color: #5B4633;
 }
 
 #popups {
@@ -149,7 +161,7 @@ h1 {
     bottom: 0;
 
     background-color: black;
-    opacity: .2;
+    opacity: .15;
 }
 
 .popup {
@@ -167,8 +179,7 @@ h1 {
     padding: 0 20px 0 20px;
 
 
-    background-color: white;
-    outline: gray 2px solid;
+    background-color: #EDE2D1;
     overflow-y: auto;
     z-index: 3;
 }
@@ -191,7 +202,7 @@ h1 {
     left: 0;
     right: 0;
     height: 3px;
-    background: gray;
+    background: #141414;
     border-radius: 3px;
 }
 .close:before {
@@ -213,12 +224,11 @@ h1 {
     padding: 15px 0 15px 0;
 
     text-transform: uppercase;
-    background-color: white;
+    background-color: #EDE2D1;
 }
 .popup-head > span {
     font-size: 20px;
     font-weight: bold;
-    color: gray;
 }
 
 .popup > h1, p {
