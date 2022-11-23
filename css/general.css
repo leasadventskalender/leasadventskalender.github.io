@@ -1,0 +1,88 @@
+button.primary {
+    appearance: none;
+    background-color: #000000;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-height: 45px;
+    min-width: 0;
+    outline: none;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+button:disabled {
+    pointer-events: none;
+}
+
+button.primary:hover {
+    transform: translateY(-2px);
+}
+
+button.primary:active {
+    box-shadow: none;
+    opacity: .9;
+}
+
+button.secondary {
+    appearance: none;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-height: 45px;
+    min-width: 0;
+    outline: none;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+button.secondary:hover {
+    background-color: #d5d5d5;
+}
+
+button.secondary:active {
+    box-shadow: none;
+    opacity: .8;
+}
+
+input[type=text], input[type=password] {
+    margin: 5px 0;
+    padding: 8px;
+    min-height: 45px;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #efefef;
+    border: none;
+    height: 36px;
+    box-sizing: border-box;
+}
+input[type=text]:focus {
+    background: #e8e8e8;
+    border: none;
+    outline: none;
+}

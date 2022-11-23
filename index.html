@@ -1,7 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lea, bist dus?</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <script src="/js/main.js"></script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div class="view-container">
+    <h1>Lea, bist dus?</h1>
+    <p>
+        Diese Seite ist nur für Lea bestimmt! Um sicher zu gehen, dass du es auch wirklich bist, löse nachfolgendes
+        Rätsel.
+    </p>
+    <div class="split-container">
+        <div>
+            <img src="https://source.unsplash.com/random" alt="Bild eines Steins in Würzburg">
+        </div>
+        <div class="container">
+            <label for="answer"><strong>Was ist hier zu sehen?</strong></label>
+            <input type="text" placeholder="Enter Username" id="answer" required>
+            <button class="primary" onclick="validateLogin()">Login</button>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

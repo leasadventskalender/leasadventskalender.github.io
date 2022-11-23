@@ -1,0 +1,276 @@
+html, body {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    overflow-x: hidden;
+}
+
+.view-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 35em) {
+    .view-container {
+        width: 100%;
+    }
+
+    .popup {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+    }
+
+    #popups {
+        align-items: flex-end;
+    }
+}
+
+@media screen and (min-width: 35em) {
+    .view-container {
+        max-width: 60vw;
+        min-width: 500px;
+    }
+
+    .popup {
+        max-width: 40vw;
+        min-width: 500px;
+
+        border-radius: 15px;
+    }
+
+    #popups {
+        align-items: center;
+    }
+}
+
+#grid-container {
+    display: grid;
+    row-gap: 3rem;
+    column-gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+#grid-container > div {
+
+}
+
+h1, p {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+#header {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.door {
+    position: relative;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 112px;
+    height: 150px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.front {
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    outline: black 3px solid;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    transition-duration: .5s;
+    transform-origin: left;
+}
+
+.front > span {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.disabled {
+    opacity: .5;
+}
+
+.enabled > div:first-child:hover {
+    transform: skew(0, 10deg);
+}
+
+.back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+    background-color: black;
+}
+
+#popups {
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.15s, visibility 0s linear 0.15s, opacity 0.15s linear;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+}
+
+#popups:after {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: black;
+    opacity: .2;
+}
+
+.popup {
+    visibility: hidden;
+    opacity: 0;
+
+    transform: translateY(20px);
+    transition: transform 0.15s, visibility 0s linear 0.15s, opacity 0.15s linear;
+
+    position: absolute;
+    box-sizing: border-box;
+
+    flex-grow: 1;
+    height: 80vh;
+    padding: 0 20px 0 20px;
+
+
+    background-color: white;
+    outline: gray 2px solid;
+    overflow-y: auto;
+    z-index: 3;
+}
+
+.close {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+}
+.close:before, .close:after {
+    content: '';
+    position: absolute;
+    top: calc((30px - 3px)/2);
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: gray;
+    border-radius: 3px;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+
+.popup-head {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0 15px 0;
+
+    text-transform: uppercase;
+    background-color: white;
+}
+.popup-head > span {
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+}
+
+.popup > h1, p {
+    text-align: left;
+}
+
+.popup > p, span {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+
+.show, #popups.show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.popup.show {
+    transform: translateY(0px);
+}
+
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.quiz #validation {
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quiz #validation > span {
+    display: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+.quiz #validation > span.show {
+    display: block;
+}
+
+.option {
+    font-size: 20px;
+}
+
+.popup > iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
