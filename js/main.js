@@ -1,11 +1,18 @@
 function validateLogin() {
     const answer = document.getElementById("answer").value;
-    if ( answer === "Tropfstein" || answer === "tropfstein"){
+    if ( answer === "Tropfstein" ||
+        answer === "tropfstein" ||
+        answer === "Ein Tropfstein" ||
+        answer === "ein tropfstein" ||
+        answer === "ein Tropfstein"
+    ){
         window.location.href = '/html/main.html'; // Redirecting to other page.
-        return false;
+        return true;
     }
     else{
-
+        const inputField = document.getElementById("answer");
+        inputField.style.outline = "2px solid #A83939";
+        inputField.value = "";
     }
 }
 
@@ -16,7 +23,7 @@ function disableDoors() {
 
     const doorElements = document.getElementById("grid-container").children;
 
-    for (let i = 0; i < cDay; i++) {
+    for (let i = 0; i < Math.min(cDay, 24); i++) {
         doorElements.item(i).classList.add("enabled");
         doorElements.item(i).classList.remove("disabled");
     }

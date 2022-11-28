@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
     <title>Lea, bist dus?</title>
 
     <link rel="stylesheet" href="css/index.css">
@@ -19,12 +21,16 @@
     </p>
     <div class="split-container">
         <div>
-            <img src="https://source.unsplash.com/random" alt="Bild eines Steins in Würzburg">
+            <img src="https://media.4teachers.de/images/thumbs/image_thumb.10639.jpg" alt="Bild eines Steins in Würzburg">
         </div>
         <div class="container">
-            <label for="answer"><strong>Was ist hier zu sehen?</strong></label>
-            <input type="text" placeholder="Enter Username" id="answer" required>
-            <button class="primary" onclick="validateLogin()">Login</button>
+            <div class="question-element">
+                <label for="answer"><strong>Was ist hier zu sehen?</strong></label>
+                <div>
+                    <input type="text" id="answer" required>
+                    <button class="primary" onclick="validateLogin()">Login</button>
+                </div>
+            </div>
         </div>
     </div>
 

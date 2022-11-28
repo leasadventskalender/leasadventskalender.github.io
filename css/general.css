@@ -23,7 +23,7 @@ button.primary {
     font-weight: 600;
     line-height: normal;
     min-height: 45px;
-    min-width: 0;
+    min-width: 95px;
     outline: none;
     padding: 10px 24px;
     text-align: center;
