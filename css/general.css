@@ -1,3 +1,6 @@
+@font-face {font-family: Montserrat; src: url('../assets/fonts/Montserrat-Regular.otf');}
+@font-face {font-family: Montserrat; font-weight: bold; src: url('../assets/fonts/Montserrat-Bold.otf');}
+
 html, body {
     font-family: Montserrat, Roboto, Arial, sans-serif;
     font-size: 15px;
@@ -8,6 +11,11 @@ html, body {
 
 body {
     padding-bottom: 100px;
+}
+
+
+h1 {
+    font-size: 3em;
 }
 
 button.primary {

@@ -58,16 +58,15 @@ h1, p {
     text-align: center;
 }
 
-h1 {
-    font-size: 3em;
-}
-
-#header {
+.header {
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.header > p {
+    line-height: 22px;
 }
 
 .door {
@@ -177,7 +176,7 @@ h1 {
     box-sizing: border-box;
 
     flex-grow: 1;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 100px 20px;
 
 
     background-color: #EDE2D1;
@@ -232,11 +231,11 @@ h1 {
     font-weight: bold;
 }
 
-.popup > h1, p {
+.popup > h1, .popup > p {
     text-align: left;
 }
 
-.popup > p, span {
+.popup > p, .popup > span, .popup > ul {
     font-size: 20px;
     line-height: 28px;
 }

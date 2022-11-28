@@ -21,11 +21,10 @@ function disableDoors() {
     let cDay = currentDate.getDate()
     let cMonth = currentDate.getMonth() + 1
 
-    const doorElements = document.getElementById("grid-container").children;
-
     for (let i = 0; i < Math.min(cDay, 24); i++) {
-        doorElements.item(i).classList.add("enabled");
-        doorElements.item(i).classList.remove("disabled");
+        const door = document.getElementById("door" + (i+1));
+        door.classList.add("enabled");
+        door.classList.remove("disabled");
     }
 }
 

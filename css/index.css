@@ -3,6 +3,19 @@
     margin-right: auto;
 }
 
+#header {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#header > h1 {
+    margin-bottom: 0;
+}
+#header > p {
+    line-height: 22px;
+}
+
 @media screen and (max-width: 35em) {
     .view-container {
         width: 100%;

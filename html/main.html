@@ -9,42 +9,58 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/general.css">
     <script src="/js/main.js"></script>
-    <script>
-        function resizeIframe(iFrame) {
-            iFrame.width = iFrame.contentWindow.document.body.scrollWidth;
-            iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-        }
-    </script>
 </head>
 <body onload="disableDoors(); preventPopupClicks()">
 <div class="view-container">
-    <div id="header">
+    <div class="header">
         <h1>Dein Adventskalender</h1>
         <p>
-            Lorem Ipsum
+            Hi Lea! Willkommen zu deinem Adventskalender. Du hast dich sicherlich schon gefragt, warum in der Box, die
+            du von mir bekommen hast keine 24 Fächer drin sind. Hier hast du sie alle! Auf dieser Webseite darfst du
+            jeden Tag ein Türchen öffnen und manchmal dann auch ein Stäbchen aus der Box ziehen. Aber das sag ich dir
+            dann ;) Fang doch direkt mal mit dem ersten Türchen an! Ich wünsch dir viel Freude mit dem Kalender. Love
+            you!!
         </p>
     </div>
 
     <div id="popups" onclick="hidePopup()">
+
         <div class="popup">
             <div class="popup-head">
                 <span>Tür 1</span>
                 <button class="close" onclick="hidePopup(1)"></button>
             </div>
 
-            <h1>Eine Überschrift</h1>
+            <h1>Ein Quiz</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
+                Wenn du es bis hierhin geschafft hast, hast du wohl auch schon die Schokolade bekommen (Und vlt schon
+                gegessen??). Aber die Preisfrage heute ist natürlich...
             </p>
+
+            <p>
+                <b>Welche Sorte war das?</b>
+            </p>
+
+            <div class="quiz">
+                <div class="option">
+                    <input type="radio" id="1" name="Schoki" value="90% Mild">
+                    <label for="1">85% Mild</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="2" name="Schoki" value="85% Kräftig">
+                    <label for="2">90% Mild</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="3" name="Schoki" value="90% Kräftig">
+                    <label for="3">78% Kräftig</label>
+                </div>
+                <div id="validation">
+                    <button onclick="validateSchokiQuiz()" class="secondary">Prüfen</button>
+                    <span id="LabelRight" style="color: green">Gut getastet! Das ist richtig.</span>
+                    <span id="LabelWrong" style="color: #A83939">Das ist falsch. Hör genau hin!</span>
+                    <span id="LabelNothing" style="color: gray">Du musst eine Antwort auswählen</span>
+                </div>
+            </div>
         </div>
 
         <div class="popup">
@@ -53,31 +69,11 @@
                 <button class="close" onclick="hidePopup(2)"></button>
             </div>
 
-            <h1>Ein Quiz</h1>
-            <p>
-                Welche Schokolade war das?
-            </p>
+            <h1>Geschenk</h1>
 
-            <div class="quiz">
-                <div class="option">
-                    <input type="radio" id="1" name="Schoki" value="90% Mild">
-                    <label for="1">90% Mild</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="2" name="Schoki" value="85% Kräftig">
-                    <label for="2">85% Kräftig</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="3" name="Schoki" value="90% Kräftig">
-                    <label for="3">90% Kräftig</label>
-                </div>
-                <div id="validation">
-                    <button onclick="validateSchokiQuiz()" class="secondary">Prüfen</button>
-                    <span id="LabelRight" style="color: green">Das ist richtig!</span>
-                    <span id="LabelWrong" style="color: #A83939">Das ist falsch. Es war 1</span>
-                    <span id="LabelNothing" style="color: gray">Du musst eine Antwort auswählen</span>
-                </div>
-            </div>
+            <p>
+                Heute darfst du das nächste Stäbchen ziehen :)
+            </p>
         </div>
 
         <div class="popup">
@@ -86,59 +82,318 @@
                 <button class="close" onclick="hidePopup(3)"></button>
             </div>
 
-            <h1>Eine Videoempfehlung</h1>
+            <h1>Videoempfehlung</h1>
 
-            <iframe id="video3" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+            <p>
+                Da uns auf dieser Webseite ja auch die großen Weiten des World Wide Webs zur Verfügung stehen, werd ich
+                diese ab und zu nutzen, um dir ein paar schöne Dinge zu zeigen, die es da draußen so gibt.<br>
+                Heute gibt es eine Video-Empfehlung. Hast du eigentlich Staffel 3 schon gesehen?
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/lg5wznn3IBE" allowfullscreen></iframe>
         </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 4</span>
+                <button class="close" onclick="hidePopup(4)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 5</span>
+                <button class="close" onclick="hidePopup(5)"></button>
+            </div>
+
+            <h1>Minispiel</h1>
+            <p>
+                Schau mal hier: <a href="https://quickdraw.withgoogle.com">Quickdraw with Google</a><br>
+                Hier kannst du deine Zeichenkünste unter Beweis stellen und Googles Bilderkennung versucht zu raten, was
+                du malst. Vielleicht hast du Spaß daran, oder du bist maximal verwirrt... so oder so, hab einen schönen
+                Tag!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 6</span>
+                <button class="close" onclick="hidePopup(6)"></button>
+            </div>
+
+            <h1>Video-Empfehlung</h1>
+            <p>
+                Etwas mehr Input zu dem Thema
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/AvO8-925Edc" allowfullscreen></iframe>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 7</span>
+                <button class="close" onclick="hidePopup(7)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 8</span>
+                <button class="close" onclick="hidePopup(8)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 9</span>
+                <button class="close" onclick="hidePopup(9)"></button>
+            </div>
+
+            <h1>Video-Empfehlung</h1>
+            <p>
+                Heute mal was zum Nachdenken. Das Video von Kurzgesagt hat irgendwie nen Eindruck bei mir hinterlassen.
+                Find es gleichzeitig erschreckend und total schön :)
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/w9J6D4r30HY&t" allowfullscreen></iframe>
+
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 10</span>
+                <button class="close" onclick="hidePopup(10)"></button>
+            </div>
+
+            <h1>Bisschen Musik entdecken?</h1>
+            <p>
+                Schau mal hier: <a href="https://radiooooo.com">Radiooooo.com</a><br>
+                Hier kann man in die Hits einzelner Länder in jedem Jahrzehnt reinhören. Viel Freude damit :)
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 11</span>
+                <button class="close" onclick="hidePopup(11)"></button>
+            </div>
+
+            <h1>Video-Empfehlung</h1>
+            <p>
+                Heute mal bisschen was Ernsteres. Hab dir ja schonmal von dieser Thematik erzählt, warum Facebook
+                sone große Bedrohung für die Welt ist. In der Folge vom ZDF-Magazin Royale gehts auch um das Thema.
+                Vielleicht findest du es ja interessant.
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/ALzSAC4Wl6c" allowfullscreen></iframe>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 12</span>
+                <button class="close" onclick="hidePopup(12)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 13</span>
+                <button class="close" onclick="hidePopup(13)"></button>
+            </div>
+
+            <h1>???</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 14</span>
+                <button class="close" onclick="hidePopup(14)"></button>
+            </div>
+
+            <h1>Wissenswertes</h1>
+            <p>
+                Nachdem wir zusammen an der Ardèche bereits der wilden Natur ins Auge blicken und uns mit klugen Worten
+                die Wildschweine vom Leib schwafeln mussten, sorgst du dich völlig zurecht darum, mit welchen wilden
+                Tieren wir es nächstes Mal wohl werden aufnehmen müssen. Glücklicherweise hält der fragwürdige
+                Männerratgeber dafür eine Auswahl parat, damit du dir im Ernstfall gar keine Sorgen machen musst.
+                Nachfolgend also daraus ein Ausschnitt.
+            </p>
+            <p>
+                <b>Wie man gegen ein Krokodil kämpft</b>
+            </p>
+            <ul>
+                <li>Krokodile sehen träge aus, sind aber unheimlich schnell. Sie können mit 18 km/h aus dem Wasser
+                    auftauchen und einem Menschen bis zu 50 Meter an Land folgen.
+                </li>
+                <li>Harmlos sind die Kaimane in Amerika und die Süßwasserkrokodile in Australien.</li>
+                <li>Der einzige Schwachpunkt der Tiere: Die Muskeln, um ihr Maul zu öffnen, sind schwach. Beim Zubeißen
+                    sind die Krokodile hin- gegen unheimlich unerbittlich. Die beste Strategie deshalb: Wann immer
+                    möglich versuchen, dem Tier das Maul zuzuhalten.
+                </li>
+                <li>An Land kann man versuchen, auf das Krokodil zu springen.</li>
+                <li>Es sind Fälle bekanntgeworden, in denen Krokodile abgelassen haben, nachdem ihnen das Opfer in die
+                    Nase gebissen oder einen Stock ins Auge gestoßen hat.
+                </li>
+                <li>Nachts sind Krokodile leicht zu erkennen, weil ihre Augen rot im Schein der Taschenlampe leuchten.
+                </li>
+            </ul>
+
+
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 15</span>
+                <button class="close" onclick="hidePopup(15)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 16</span>
+                <button class="close" onclick="hidePopup(16)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 17</span>
+                <button class="close" onclick="hidePopup(17)"></button>
+            </div>
+
+            <h1>???</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 18</span>
+                <button class="close" onclick="hidePopup(18)"></button>
+            </div>
+
+            <h1>Rhythmus</h1>
+            <p>
+                Schau mal hier: <a href="https://musiclab.chromeexperiments.com/Rhythm">Rhythm</a><br>
+                Hier kannst du deine musikalische Ader ganz neu entdecken. Eine weitere zusammenhangslose Webseite, die
+                mich in der Vergangenheit sehr amüsiert hat. Schick mir gerne mal was du gezaubert hast! Wenn dir das
+                gefallen hat, schau auch mal hier:
+                <a href="https://musiclab.chromeexperiments.com/Song-Maker">Songmaker</a>
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 19</span>
+                <button class="close" onclick="hidePopup(19)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 20</span>
+                <button class="close" onclick="hidePopup(20)"></button>
+            </div>
+
+            <h1>Video-Empfehlung</h1>
+
+            <iframe src="https://www.youtube.com/embed/34VNA3HcP5U" allowfullscreen></iframe>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 21</span>
+                <button class="close" onclick="hidePopup(21)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 22</span>
+                <button class="close" onclick="hidePopup(22)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 23</span>
+                <button class="close" onclick="hidePopup(23)"></button>
+            </div>
+
+            <h1>Geschenk</h1>
+            <p>
+                Es ist Zeit, das nächste Stäbchen zu ziehen!
+            </p>
+        </div>
+
+        <div class="popup">
+            <div class="popup-head">
+                <span>Tür 24</span>
+                <button class="close" onclick="hidePopup(24)"></button>
+            </div>
+
+            <h1>Mach es auf</h1>
+            <p>
+                Es ist endlich Zeit. Schnapp dir ne Schere, heute darfst du die Box aufmachen. Frohe Weihnachten meine
+                Liebe!
+            </p>
+        </div>
+
     </div>
 
     <div id="grid-container">
-        <div class="door brown disabled" onclick="showPopup(1)">
-            <div class="front">
-                <span>1</span>
-            </div>
-            <div class="back">
 
-            </div>
-        </div>
 
-        <div class="door red disabled" onclick="showPopup(2)">
-            <div class="front">
-                <span>2</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled" onclick="showPopup(3)">
-            <div class="front">
-                <span>3</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>4</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>5</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
+        <div id="door6" class="door brown disabled" onclick="showPopup(6)">
             <div class="front">
                 <span>6</span>
             </div>
@@ -147,124 +402,7 @@
             </div>
         </div>
 
-        <div class="door red disabled">
-            <div class="front">
-                <span>7</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>8</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
-            <div class="front">
-                <span>9</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>10</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
-            <div class="front">
-                <span>11</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
-            <div class="front">
-                <span>12</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>13</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
-            <div class="front">
-                <span>14</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>15</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>16</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
-            <div class="front">
-                <span>17</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
-            <div class="front">
-                <span>18</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door brown disabled">
-            <div class="front">
-                <span>19</span>
-            </div>
-            <div class="back">
-
-            </div>
-        </div>
-
-        <div class="door red disabled">
+        <div id="door20" class="door red disabled" onclick="showPopup(20)">
             <div class="front">
                 <span>20</span>
             </div>
@@ -273,25 +411,43 @@
             </div>
         </div>
 
-        <div class="door red disabled">
+        <div id="door19" class="door brown disabled" onclick="showPopup(19)">
             <div class="front">
-                <span>21</span>
+                <span>19</span>
             </div>
             <div class="back">
 
             </div>
         </div>
 
-        <div class="door red disabled">
+        <div id="door4" class="door red disabled" onclick="showPopup(4)">
             <div class="front">
-                <span>22</span>
+                <span>4</span>
             </div>
             <div class="back">
 
             </div>
         </div>
 
-        <div class="door brown disabled">
+        <div id="door14" class="door brown disabled" onclick="showPopup(14)">
+            <div class="front">
+                <span>14</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door13" class="door red disabled" onclick="showPopup(13)">
+            <div class="front">
+                <span>13</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door23" class="door brown disabled" onclick="showPopup(23)">
             <div class="front">
                 <span>23</span>
             </div>
@@ -300,7 +456,26 @@
             </div>
         </div>
 
-        <div class="door red disabled">
+        <div id="door7" class="door red disabled" onclick="showPopup(7)">
+            <div class="front">
+                <span>7</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door17" class="door brown disabled" onclick="showPopup(17)">
+            <div class="front">
+                <span>17</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+
+        <div id="door24" class="door red disabled" onclick="showPopup(24)">
             <div class="front">
                 <span>24</span>
             </div>
@@ -309,6 +484,131 @@
             </div>
         </div>
 
+        <div id="door11" class="door brown disabled" onclick="showPopup(11)">
+            <div class="front">
+                <span>11</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door12" class="door brown disabled" onclick="showPopup(12)">
+            <div class="front">
+                <span>12</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door2" class="door red disabled" onclick="showPopup(2)">
+            <div class="front">
+                <span>2</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door8" class="door red disabled" onclick="showPopup(8)">
+            <div class="front">
+                <span>8</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door21" class="door red disabled" onclick="showPopup(21)">
+            <div class="front">
+                <span>21</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door3" class="door brown disabled" onclick="showPopup(3)">
+            <div class="front">
+                <span>3</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door15" class="door red disabled" onclick="showPopup(15)">
+            <div class="front">
+                <span>15</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door22" class="door red disabled" onclick="showPopup(22)">
+            <div class="front">
+                <span>22</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door10" class="door brown disabled" onclick="showPopup(10)">
+            <div class="front">
+                <span>10</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door9" class="door brown disabled" onclick="showPopup(9)">
+            <div class="front">
+                <span>9</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door1" class="door brown disabled" onclick="showPopup(1)">
+            <div class="front">
+                <span>1</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door18" class="door red disabled" onclick="showPopup(18)">
+            <div class="front">
+                <span>18</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door16" class="door brown disabled" onclick="showPopup(16)">
+            <div class="front">
+                <span>16</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+
+        <div id="door5" class="door red disabled" onclick="showPopup(5)">
+            <div class="front">
+                <span>5</span>
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
 
     </div>
 </div>
