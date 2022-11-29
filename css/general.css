@@ -1,8 +1,7 @@
-@font-face {font-family: Montserrat; src: url('../assets/fonts/Montserrat-Regular.otf');}
-@font-face {font-family: Montserrat; font-weight: bold; src: url('../assets/fonts/Montserrat-Bold.otf');}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 html, body {
-    font-family: Montserrat, Roboto, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 
     background-color: #EDE2D1;
@@ -13,10 +12,36 @@ body {
     padding-bottom: 100px;
 }
 
+@media screen and (min-width: 35em) {
+    h1 {
+        font-size: 2em;
+    }
 
-h1 {
-    font-size: 3em;
+    p {
+        line-height: 22px;
+    }
+
+    p, span, ul {
+        font-size: 1em;
+        line-height: 1.6em;
+    }
 }
+
+@media screen and (max-width: 35em) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    p, span, ul {
+        font-size: 1em;
+        line-height: 1.6em;
+    }
+}
+
 
 button.primary {
     appearance: none;
@@ -58,11 +83,11 @@ button.primary:active {
 
 button.secondary {
     appearance: none;
-    background-color: #e3e3e3;
+    background-color: #808080;
     border: none;
     border-radius: 10px;
     box-sizing: border-box;
-    color: black;
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
@@ -82,7 +107,7 @@ button.secondary {
 }
 
 button.secondary:hover {
-    background-color: #d5d5d5;
+    background-color: #707070;
 }
 
 button.secondary:active {
