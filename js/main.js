@@ -29,6 +29,8 @@ function disableDoors() {
 }
 
 function showPopup(number) {
+    if (document.getElementById('door' + (number-1)).classList.contains('disabled')) return;
+
     const popups = document.getElementById("popups");
 
     popups.classList.add("show");

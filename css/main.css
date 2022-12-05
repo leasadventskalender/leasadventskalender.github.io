@@ -92,7 +92,6 @@ html, body {
     height: 150px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
-    cursor: pointer;
 }
 
 .front {
@@ -128,6 +127,11 @@ html, body {
 
 .disabled {
     opacity: .5;
+    cursor: default;
+}
+
+.enabled {
+    cursor: pointer;
 }
 
 .enabled > div:first-child:hover {
